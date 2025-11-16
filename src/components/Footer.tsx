@@ -32,8 +32,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           {/* Logo */}
           <div className="flex items-center justify-center">
-            <Link href="/" className="text-2xl font-bold text-primary">
-              Future's Relic
+            <Link href="/">
+              <img src="/images/fr-logo-white.png" alt="Future's Relic" className="h-12" />
             </Link>
           </div>
 

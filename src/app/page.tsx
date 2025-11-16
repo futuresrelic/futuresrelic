@@ -4,9 +4,16 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-b from-dark to-gray-900 py-20 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-accent uppercase tracking-wide mb-4">An NFT Filmmaking Experience</p>
+      <section className="relative py-20 px-4" style={{
+        backgroundImage: 'url(/images/desert-background.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}>
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div className="relative max-w-6xl mx-auto text-center">
+          <img src="/images/banner.jpg" alt="Future's Relic Banner" className="mx-auto mb-8 max-w-full h-auto rounded-lg shadow-2xl" />
+          <p className="text-accent uppercase tracking-wide mb-4 text-lg">An NFT Filmmaking Experience</p>
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             Future's <span className="text-primary">Relic</span>
           </h1>
@@ -90,6 +97,7 @@ export default function Home() {
               subtitle="with punched holes"
               description="New Interns receive an Intern Card. Each time you complete an Intern Task, a hole will be punched in your card. Once your card has four punched holes, you can exchange it for an Intern Editor card."
               dropLink="https://neftyblocks.com/collection/futuresrelic/drops/123480"
+              image="/images/intern-card-front-00.png"
             />
 
             {/* Intern Editor Card */}
@@ -97,6 +105,7 @@ export default function Home() {
               title="Intern Editor Card"
               description="This card allows you to perform basic editing."
               dropLink="https://neftyblocks.com/collection/futuresrelic/drops/30594"
+              image="/images/intern-card-front-01.png"
             />
 
             {/* Hired Card */}
@@ -104,6 +113,7 @@ export default function Home() {
               title="Hired!"
               description="Blend this card to activate it as an ID Card: Editor on Payroll. This will get you on the Payroll, allowing you to earn Wax Seals and crEDITs every week. You can also claim a weekly schedule, which has a 1% chance of including a Training Day for aspiring Jerryriggers."
               dropLink="https://neftyblocks.com/collection/futuresrelic/drops/80263"
+              image="/images/intern-card-front-02.png"
             />
 
             {/* ID Card */}
@@ -112,6 +122,7 @@ export default function Home() {
               subtitle="Apple Office lead Speaker"
               description="ID Card: Editor on Payroll. This will get you on the Payroll, allowing you to earn Wax Seals and crEDITs every week. You can also claim a weekly schedule, which has a 1% chance of including a Training Day for aspiring Jerryriggers."
               dropLink="https://neftyblocks.com/collection/futuresrelic/drops/78114"
+              image="/images/intern-card-front-03.png"
             />
           </div>
         </div>
@@ -141,6 +152,7 @@ export default function Home() {
                 'Film Box - 6 NFTs'
               ]}
               link="https://neftyblocks.com/collection/futuresrelic/blends/blend.nefty/12467"
+              image="/images/Film-Box.png"
             />
 
             {/* Small Canister */}
@@ -155,6 +167,7 @@ export default function Home() {
                 'Small Canister - 8 NFTs'
               ]}
               link="https://neftyblocks.com/collection/futuresrelic/blends/blend.nefty/12466"
+              image="/images/Small-Canister.png"
             />
 
             {/* Film Case */}
@@ -169,6 +182,7 @@ export default function Home() {
                 'Film Case - 7 NFTs'
               ]}
               link="https://neftyblocks.com/collection/futuresrelic/blends/blend.nefty/37407"
+              image="/images/Triple-Canisters.png"
             />
           </div>
         </div>
@@ -250,16 +264,17 @@ export default function Home() {
 }
 
 // Component for Intern Cards
-function InternCard({ title, subtitle, description, dropLink }: {
+function InternCard({ title, subtitle, description, dropLink, image }: {
   title: string
   subtitle?: string
   description: string
   dropLink: string
+  image: string
 }) {
   return (
     <div className="bg-gray-800 rounded-lg overflow-hidden hover:shadow-xl transition-shadow">
-      <div className="aspect-[3/4] bg-gray-700 flex items-center justify-center">
-        <span className="text-4xl">🎬</span>
+      <div className="aspect-[3/4] bg-gray-700 flex items-center justify-center overflow-hidden">
+        <img src={image} alt={title} className="w-full h-full object-cover" />
       </div>
       <div className="p-6">
         <h3 className="text-xl font-bold mb-2">{title}</h3>
@@ -279,18 +294,19 @@ function InternCard({ title, subtitle, description, dropLink }: {
 }
 
 // Component for Canister Cards
-function CanisterCard({ title, subtitle, price, chapters, features, link }: {
+function CanisterCard({ title, subtitle, price, chapters, features, link, image }: {
   title: string
   subtitle: string
   price: string
   chapters: string
   features: string[]
   link: string
+  image: string
 }) {
   return (
     <div className="bg-gray-800 rounded-lg overflow-hidden hover:shadow-xl transition-shadow">
-      <div className="aspect-square bg-gray-700 flex items-center justify-center">
-        <span className="text-6xl">🎞️</span>
+      <div className="aspect-square bg-gray-700 flex items-center justify-center overflow-hidden">
+        <img src={image} alt={title} className="w-full h-full object-cover" />
       </div>
       <div className="p-6">
         <h3 className="text-2xl font-bold mb-2">{title}</h3>

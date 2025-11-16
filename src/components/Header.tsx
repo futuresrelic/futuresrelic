@@ -22,7 +22,7 @@ export default function Header() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-primary">Future's Relic</span>
+              <img src="/images/fr-logo-white.png" alt="Future's Relic" className="h-12" />
             </Link>
           </div>
 
